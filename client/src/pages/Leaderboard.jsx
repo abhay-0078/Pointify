@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useUserStore } from "../store/useUserStore";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5001");
+const socket = io("https://pointify.onrender.com");
 
 const Leaderboard = () => {
   const { users, getUsers } = useUserStore();
