@@ -1,22 +1,22 @@
 import React, { useEffect } from "react";
 import { useUserStore } from "../store/useUserStore";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 
-const socket = io("https://pointify.onrender.com");
+// const socket = io("https://pointify.onrender.com");
 
 const Leaderboard = () => {
   const { users, getUsers } = useUserStore();
 
   useEffect(() => {
-    getUsers();
+    getUsers()
 
-    socket.on("pointsUpdated", () => {
-      getUsers();
-    });
+    // socket.on("pointsUpdated", () => {
+    //   getUsers();
+    // });
 
-    return () => {
-      socket.off("pointsUpdated");
-    };
+    // return () => {
+    //   socket.off("pointsUpdated");
+    // };
   }, []);
 
   const sortedUsers = [...users].sort((a, b) => b.point - a.point);
