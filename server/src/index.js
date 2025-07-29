@@ -13,7 +13,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://pointify-frontend.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
